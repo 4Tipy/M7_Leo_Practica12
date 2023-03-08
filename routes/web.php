@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use app\Http\Controllers\Admin\ControladorAdmin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix ('adb') -> group (function(){
+    Route::get('clientes', 'ControladorAdmin@clientes');
+});
+Route::prefix ('adb') -> group (function(){
+    Route::get('facturacion', 'ControladorAdmin@clientes');
+});
+Route::prefix ('adb') -> group (function(){
+    Route::get('contabilidad', 'ControladorAdmin@clientes');
 });
